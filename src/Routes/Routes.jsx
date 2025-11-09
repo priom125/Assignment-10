@@ -7,6 +7,9 @@ import Register from '../components/Register';
 import AllReviews from '../Pages/AllReviews';
 import AddReview from '../Pages/AddReview';
 import MyReview from '../Pages/MyReview';
+import Loading from '../components/Loading';
+import DetailReview from '../Pages/DetailReview';
+import ProtectedRoute from './ProtectedRoute';
 
 
 
@@ -19,7 +22,9 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
+        loader: () => fetch('Alldata.json'),
+        hydrateFallbackElement: <Loading/>
       },
       {
         path:"login",
@@ -41,12 +46,23 @@ const router = createBrowserRouter([
       {
         path:"my-reviews",
         
-        element: <MyReview/>
+        element: <ProtectedRoute>
+          <MyReview/>
+        </ProtectedRoute>,
       },
       {
         path:"all-reviews",
+         
+        element: <AllReviews/>,
+          loader: () => fetch('Alldata.json'),
+        hydrateFallbackElement: <Loading/>
+      },
+      {
+        path:"review/:id",
         
-        element: <AllReviews/>
+        element: <ProtectedRoute>
+          <DetailReview/>
+        </ProtectedRoute>
       },
       
     ],
