@@ -1,9 +1,12 @@
 import React, { use } from "react";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../Auth/AuthProvider";
+import { toast } from "react-toastify";
 
 function Login() {
-  const { signIn } = use(AuthContext);
+  const { signIn, googleLogin,setUser,updateUser } = use(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -14,12 +17,39 @@ function Login() {
     signIn(email, password)
       .then((result) => {
         console.log("User Login Complete:", result.user);
+         const user = result.user;
+        setUser(user);
+        toast.success("Login Successful!");
+           navigate('/');
+
       })
       .catch((error) => {
         console.error("Error code:", error.code);
         console.error("Error message:", error.message);
+         toast.error("Login Failed. Please try again.");
       });
   };
+
+const ContinueWithLogin = () => {
+    googleLogin()
+   .then((result) => {
+            const user = result.user; 
+            
+          
+            console.log("User Email:", user.email);
+            console.log("User DisplayName from Google:", user.displayName);
+            console.log("User PhotoURL from Google:", user.photoURL);
+            
+            setUser(user); 
+            toast.success("Login Successful!");
+            navigate('/');
+        })
+        .catch((error) => {
+            console.error("Error code:", error.code);
+            console.error("Error message:", error.message);
+            toast.error("Login Failed. Please try again.");
+        });
+}
 
   return (
     <div className="flex flex-col items-center justify-center mt-40">
@@ -49,7 +79,7 @@ function Login() {
           Login
         </button>
 
-        <button className="btn bg-white text-black border-[#e5e5e5] mt-3">
+        <button onClick={ContinueWithLogin} type="button" className="btn bg-white text-black border-[#e5e5e5] mt-3">
           <svg
             aria-label="Google logo"
             width="16"

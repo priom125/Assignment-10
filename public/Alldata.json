@@ -1,0 +1,202 @@
+[
+  {
+    "id": "r1001",
+    "foodName": "Spicy Tuna Crunch Roll",
+    "foodImageUrl": "https://placehold.co/400x300/4F46E5/FFFFFF?text=Tuna+Roll",
+    "restaurantName": "Kyoto Sushi Bar",
+    "location": "Downtown, Seattle",
+    "starRating": 4.5,
+    "reviewerName": "Anya Sharma",
+    "reviewText": "The tuna was incredibly fresh, and the spicy mayo had a perfect kick. The crunch topping added a great texture contrast. Definitely recommend this for sushi lovers!"
+  },
+  {
+    "id": "r1002",
+    "foodName": "Classic Margherita Pizza",
+    "foodImageUrl": "https://placehold.co/400x300/059669/FFFFFF?text=Margherita+Pizza",
+    "restaurantName": "Paolo's Pizzeria",
+    "location": "North End, Boston",
+    "starRating": 5.0,
+    "reviewerName": "Mike Chen",
+    "reviewText": "Possibly the best Margherita pizza I've had outside of Italy. The crust was light and airy, the sauce was sweet, and the fresh basil tied it all together. A true masterpiece."
+  },
+  {
+    "id": "r1003",
+    "foodName": "Truffle Mushroom Pasta",
+    "foodImageUrl": "https://placehold.co/400x300/F97316/FFFFFF?text=Pasta+Dish",
+    "restaurantName": "The Golden Spoon",
+    "location": "Midtown, New York",
+    "starRating": 3.8,
+    "reviewerName": "Jennifer Lee",
+    "reviewText": "The presentation was beautiful, and the truffle scent was intoxicating. However, the pasta was slightly overcooked, making the texture a bit soft. Good, but not great for the price."
+  },
+  {
+    "id": "r1004",
+    "foodName": "Smoked Brisket Sandwich",
+    "foodImageUrl": "https://placehold.co/400x300/000000/FACC15?text=Brisket+Sandwich",
+    "restaurantName": "The Pit Stop BBQ",
+    "location": "Deep Ellum, Dallas",
+    "starRating": 4.7,
+    "reviewerName": "Robert Davis",
+    "reviewText": "Amazing bark on the brisket and the smoke ring was perfect. The sauce had a great tang, but the bun was a little soggy. Overall, fantastic barbecue."
+  },
+  {
+    "id": "r1005",
+    "foodName": "Chicken Tikka Masala",
+    "foodImageUrl": "https://placehold.co/400x300/EF4444/FFFFFF?text=Tikka+Masala",
+    "restaurantName": "Spice Route Kitchen",
+    "location": "Little India, London",
+    "starRating": 4.9,
+    "reviewerName": "Priya Singh",
+    "reviewText": "Creamy, rich, and perfectly spiced. The chicken was tender, and the portion size was generous. Easily the best I've had in the city."
+  },
+  {
+    "id": "r1006",
+    "foodName": "Beef Burger & Classic Fries",
+    "foodImageUrl": "https://placehold.co/400x300/3B82F6/FFFFFF?text=Beef+Burger",
+    "restaurantName": "The Diner Hub",
+    "location": "Santa Monica, Los Angeles",
+    "starRating": 4.2,
+    "reviewerName": "David Clark",
+    "reviewText": "A simple, well-executed burger. The patty was juicy, and the fries were crispy and salty. Solid comfort food choice."
+  },
+  {
+    "id": "r1007",
+    "foodName": "Vegetable Pad Thai",
+    "foodImageUrl": "https://placehold.co/400x300/10B981/FFFFFF?text=Pad+Thai",
+    "restaurantName": "Siam Smile",
+    "location": "Chinatown, San Francisco",
+    "starRating": 4.1,
+    "reviewerName": "Emily Wong",
+    "reviewText": "Great balance of sweet and sour flavors. The noodles were cooked just right, but I wish there were more peanuts for crunch."
+  },
+  {
+    "id": "r1008",
+    "foodName": "French Onion Soup",
+    "foodImageUrl": "https://placehold.co/400x300/F59E0B/FFFFFF?text=Onion+Soup",
+    "restaurantName": "Bistro Lumière",
+    "location": "Upper East Side, NYC",
+    "starRating": 5.0,
+    "reviewerName": "Charles Dupont",
+    "reviewText": "Exquisite. The broth was deeply flavorful, and the Gruyère cheese topping was thick, bubbly, and caramelized perfectly. A winter essential."
+  },
+  {
+    "id": "r1009",
+    "foodName": "Spicy Pork Tacos al Pastor",
+    "foodImageUrl": "https://placehold.co/400x300/8B5CF6/FFFFFF?text=Tacos",
+    "restaurantName": "El Fuego Loco",
+    "location": "Mission District, San Jose",
+    "starRating": 4.6,
+    "reviewerName": "Sofia Rodriguez",
+    "reviewText": "Fantastic street tacos! The pork was tender, and the pineapple added the perfect sweetness to cut the spice. Authentic and delicious."
+  },
+  {
+    "id": "r1010",
+    "foodName": "Tonkotsu Ramen",
+    "foodImageUrl": "https://placehold.co/400x300/6B7280/FFFFFF?text=Ramen+Bowl",
+    "restaurantName": "Noodle House Zen",
+    "location": "Shinjuku, Tokyo",
+    "starRating": 4.9,
+    "reviewerName": "Kenji Tanaka",
+    "reviewText": "The broth was incredibly rich and creamy, having been simmered for hours. The chashu melted in my mouth. A sublime experience."
+  },
+  {
+    "id": "r1011",
+    "foodName": "Classic Fish and Chips",
+    "foodImageUrl": "https://placehold.co/400x300/1D4ED8/FFFFFF?text=Fish+%26+Chips",
+    "restaurantName": "The Codfather",
+    "location": "Brighton, UK",
+    "starRating": 4.0,
+    "reviewerName": "Liam Gallagher",
+    "reviewText": "Great batter—light and crisp, not greasy. The chips were proper chunky. A solid, no-nonsense pub classic."
+  },
+  {
+    "id": "r1012",
+    "foodName": "Almond Croissant",
+    "foodImageUrl": "https://placehold.co/400x300/BE185D/FFFFFF?text=Croissant",
+    "restaurantName": "Le Petit Pain",
+    "location": "Saint-Germain, Paris",
+    "starRating": 4.8,
+    "reviewerName": "Camille Leroy",
+    "reviewText": "Flaky, buttery, and packed with a sweet almond paste filling. It was baked fresh and was the perfect morning treat."
+  },
+  {
+    "id": "r1013",
+    "foodName": "Spicy Vegan Chili",
+    "foodImageUrl": "https://placehold.co/400x300/10B981/FFFFFF?text=Vegan+Chili",
+    "restaurantName": "Green Bowl Cafe",
+    "location": "Portland, Oregon",
+    "starRating": 4.4,
+    "reviewerName": "Alex Johnson",
+    "reviewText": "Hearty and warming, with a surprising depth of flavor for a vegan dish. The heat level was just right, but they could use a dollop of cashew cream."
+  },
+  {
+    "id": "r1014",
+    "foodName": "New York Cheesecake",
+    "foodImageUrl": "https://placehold.co/400x300/C084FC/FFFFFF?text=Cheesecake",
+    "restaurantName": "Carlo's Bakery",
+    "location": "Hoboken, New Jersey",
+    "starRating": 4.7,
+    "reviewerName": "Sarah Klein",
+    "reviewText": "Dense, creamy, and decadent. The graham cracker crust was perfectly crisp. A fantastic representation of a classic NYC dessert."
+  },
+  {
+    "id": "r1015",
+    "foodName": "Lobster Bisque",
+    "foodImageUrl": "https://placehold.co/400x300/DC2626/FFFFFF?text=Lobster+Bisque",
+    "restaurantName": "The Seafood Grill",
+    "location": "Miami Beach, Florida",
+    "starRating": 5.0,
+    "reviewerName": "Howard Stern",
+    "reviewText": "Velvety smooth with large chunks of fresh lobster meat. It was clearly made with a deeply flavorful stock. Expensive, but worth every penny."
+  },
+  {
+    "id": "r1016",
+    "foodName": "Spicy Kimchi Jjigae",
+    "foodImageUrl": "https://placehold.co/400x300/FBBF24/FFFFFF?text=Kimchi+Stew",
+    "restaurantName": "Seoul Garden",
+    "location": "K-Town, Los Angeles",
+    "starRating": 4.3,
+    "reviewerName": "Min-ji Kim",
+    "reviewText": "Perfectly sour and spicy. It was piping hot and came with plenty of tofu and pork belly. A truly satisfying Korean comfort meal."
+  },
+  {
+    "id": "r1017",
+    "foodName": "Mango Sticky Rice",
+    "foodImageUrl": "https://placehold.co/400x300/FCD34D/333333?text=Mango+Rice",
+    "restaurantName": "Thai Palace",
+    "location": "Oakland, California",
+    "starRating": 4.5,
+    "reviewerName": "Nina Patel",
+    "reviewText": "The mango was sweet, the rice was tender, and the coconut milk sauce was rich and thick. A superb and refreshing dessert."
+  },
+  {
+    "id": "r1018",
+    "foodName": "Falafel Plate with Hummus",
+    "foodImageUrl": "https://placehold.co/400x300/065F46/FFFFFF?text=Falafel",
+    "restaurantName": "The Mediterranean Oasis",
+    "location": "Houston, Texas",
+    "starRating": 3.9,
+    "reviewerName": "Omar Hassan",
+    "reviewText": "The falafel was crispy on the outside and moist inside, but the hummus lacked a bit of lemon. Good value for money."
+  },
+  {
+    "id": "r1019",
+    "foodName": "Beef Wellington",
+    "foodImageUrl": "https://placehold.co/400x300/374151/FFFFFF?text=Beef+Wellington",
+    "restaurantName": "Gordon's Steakhouse",
+    "location": "Caesars Palace, Las Vegas",
+    "starRating": 4.9,
+    "reviewerName": "Megan Fox",
+    "reviewText": "The puff pastry was golden, the duxelles rich, and the beef tenderloin was cooked perfectly to a medium-rare. An unforgettable fine dining experience."
+  },
+  {
+    "id": "r1020",
+    "foodName": "Breakfast Burrito Grande",
+    "foodImageUrl": "https://placehold.co/400x300/7C2D12/FFFFFF?text=Burrito",
+    "restaurantName": "Sunrise Grille",
+    "location": "Denver, Colorado",
+    "starRating": 3.5,
+    "reviewerName": "Jake Evans",
+    "reviewText": "Massive and filling, packed with eggs, potatoes, and chorizo. It was a bit too greasy, but great for a hangover cure."
+  }
+]

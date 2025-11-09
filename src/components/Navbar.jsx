@@ -4,7 +4,13 @@ import logo from "../assets/logo.png";
 import { AuthContext } from "../Auth/AuthProvider";
 
 function Navbar() {
-  const { user,logOut } = use(AuthContext);
+  const { user,logOut,loading } = use(AuthContext);
+
+  // if(loading){
+  //   return <div>Loading...</div>;
+  // }
+
+
 
 
   const handleLogout = () => {
@@ -32,7 +38,7 @@ const userDropdown = (
         <img
           alt="User Avatar"
       
-          src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+          src={user?.photoURL || logo}
         />
       </div>
     </div>

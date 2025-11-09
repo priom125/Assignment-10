@@ -5,6 +5,9 @@ import MainLayouts from '../layouts/MainLayouts';
 import Login from '../components/Login'
 import Register from '../components/Register';
 import AllReviews from '../Pages/AllReviews';
+import AddReview from '../Pages/AddReview';
+import MyReview from '../Pages/MyReview';
+
 
 
 
@@ -31,12 +34,14 @@ const router = createBrowserRouter([
       {
         path:"add-review",
         
-        element: <Register/>
+        element: 
+          <AddReview/>
+        
       },
       {
         path:"my-reviews",
         
-        element: <Register/>
+        element: <MyReview/>
       },
       {
         path:"all-reviews",
