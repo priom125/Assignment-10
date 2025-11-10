@@ -52,14 +52,14 @@ function Register() {
                 
                 const updatedUser = { ...user, displayName: name, photoURL: imageUrl };
                 setUser(updatedUser);
-                toast.success("Registration Successful!");
+              
                 navigate('/');
             })
             .catch((error) => {
                 console.error("Error updating profile:", error);
                
                 setUser(user);
-                toast.success("Registration successful, but profile update failed.");
+                toast.error("Registration successful, but profile update failed.");
             });
         })
         .catch((error) => {
@@ -77,7 +77,7 @@ function Register() {
               
                 setUser(user); 
                 
-                toast.success("Login Successful!");
+               
                    navigate('/');
             })
             .catch((error) => {

@@ -4,7 +4,7 @@ import { AuthContext } from "../Auth/AuthProvider";
 import { toast } from "react-toastify";
 
 function Login() {
-  const { signIn, googleLogin,setUser,updateUser } = use(AuthContext);
+  const { signIn, googleLogin,setUser } = use(AuthContext);
 
   const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ function Login() {
         console.log("User Login Complete:", result.user);
          const user = result.user;
         setUser(user);
-        toast.success("Login Successful!");
+       
            navigate('/');
 
       })
@@ -41,7 +41,7 @@ const ContinueWithLogin = () => {
             console.log("User PhotoURL from Google:", user.photoURL);
             
             setUser(user); 
-            toast.success("Login Successful!");
+           
             navigate('/');
         })
         .catch((error) => {
