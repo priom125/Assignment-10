@@ -16,7 +16,7 @@ function Home() {
        <Banner/>
        <TopReviews Alldata={Alldata}/>
        <BestFood/>
-       <LatestReviews/>
+       <LatestReviews Alldata={Alldata}/>
 
     </div>
   )
