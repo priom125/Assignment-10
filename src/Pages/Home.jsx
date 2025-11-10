@@ -3,6 +3,7 @@ import Banner from '../components/Banner'
 import TopReviews from '../components/TopReviews'
 import LatestReviews from '../components/LatestReviews'
 import { useLoaderData } from 'react-router';
+import BestFood from '../components/BestFood';
 
 
 function Home() {
@@ -14,7 +15,7 @@ function Home() {
     <div>
        <Banner/>
        <TopReviews Alldata={Alldata}/>
-       
+       <BestFood/>
        <LatestReviews/>
 
     </div>

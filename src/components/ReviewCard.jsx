@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router'; 
-import { MapPin, User, Star } from 'lucide-react';
+import { MapPin, Store , Star } from 'lucide-react';
 
 
 const ReviewCard = ({ review }) => {
@@ -68,7 +68,7 @@ const ReviewCard = ({ review }) => {
           
                 <div className="flex flex-col space-y-1 mb-4 text-gray-700">
                     <div className="flex items-center text-sm font-medium">
-                        <User size={14} className="mr-1 text-indigo-500" />
+                         <Store size={14} className="mr-1 text-indigo-500" />
                         <span className="text-indigo-600">{review.restaurantName}</span>
                     </div>
                     <div className="flex items-center text-xs text-gray-500">
