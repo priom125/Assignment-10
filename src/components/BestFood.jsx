@@ -13,7 +13,7 @@ function BestFood() {
 
             </div>
             <div className="w-30 h-30 rounded-full bg-[#FFDAB9] flex items-center my-20 mx-10 justify-center">
-                <img className='w-30 h-30 rounded-full -ml-' src={biriyani} alt="" />
+                <img className='w-30 h-30 rounded-full -ml-12' src={biriyani} alt="" />
             </div>
         </div>
         {/* card 2 */}
