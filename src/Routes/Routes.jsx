@@ -10,6 +10,7 @@ import MyReview from '../Pages/MyReview';
 import Loading from '../components/Loading';
 import DetailReview from '../Pages/DetailReview';
 import ProtectedRoute from './ProtectedRoute';
+import ErrorPage from '../Pages/ErrorPage';
 
 
 
@@ -41,6 +42,13 @@ const router = createBrowserRouter([
         
         element: 
           <AddReview/>
+        
+      },
+      {
+        path:"/*",
+        
+        element: 
+          <ErrorPage/>
         
       },
       {
