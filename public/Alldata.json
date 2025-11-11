@@ -1,6 +1,6 @@
 [
   {
-    "id": "bd1001",
+  
     "foodName": "Kachchi Biryani",
     "foodImageUrl": "https://i.ibb.co.com/ZRrzfBYL/kacchi.jpg",
     "restaurantName": "Nanna Kacchi Biryani",
@@ -11,7 +11,7 @@
     "createdAt": "2025-11-09"
   },
   {
-    "id": "bd1002",
+    
     "foodName": "Fuchka and Chotpoti",
     "foodImageUrl": "https://i.ibb.co.com/ymFjLcnp/fuchka.jpg",
     "restaurantName": "Baily Road Fuchka Corner",
@@ -22,7 +22,7 @@
     "createdAt": "2025-11-08"
   },
   {
-    "id": "bd1003",
+    
     "foodName": "Panta Bhat and Ilish Maach Bhaja",
     "foodImageUrl": "https://i.ibb.co.com/cKk1X0TK/panta-ilish.jpg",
     "restaurantName": "Shorot-e-Ilish",
@@ -33,7 +33,7 @@
     "createdAt": "2025-11-07"
   },
   {
-    "id": "bd1004",
+    
     "foodName": "Shorshe Ilish (Mustard Hilsa)",
     "foodImageUrl": "https://i.ibb.co.com/W4rpkxck/sorse-ilish.jpg",
     "restaurantName": "Kasturi Restaurant",
@@ -44,7 +44,7 @@
     "createdAt": "2025-11-06"
   },
   {
-    "id": "bd1005",
+    
     "foodName": "Bhuna Khichuri",
     "foodImageUrl": "https://i.ibb.co.com/7td4VMrf/bhuna-khicuri.jpg",
     "restaurantName": "Star Kabab & Restaurant",
@@ -55,7 +55,7 @@
     "createdAt": "2025-11-05"
   },
   {
-    "id": "bd1006",
+    
     "foodName": "Pani Puri/Golgappa",
     "foodImageUrl": "https://i.ibb.co.com/B5qz5c3D/golgappa.jpg",
     "restaurantName": "Mama's Chaat Shop",
@@ -66,7 +66,7 @@
     "createdAt": "2025-11-04"
   },
   {
-    "id": "bd1007",
+    
     "foodName": "Doi Fuchka (Yogurt Fuchka)",
     "foodImageUrl": "https://i.ibb.co.com/CxBymf1/doi-fuchka.jpg",
     "restaurantName": "Chatgaiya Food House",
@@ -77,7 +77,7 @@
     "createdAt": "2025-11-03"
   },
   {
-    "id": "bd1008",
+    
     "foodName": "Mutton Korma and Plain Polao",
     "foodImageUrl": "https://i.ibb.co.com/FLLVw6K2/Mutton-Korma-and-Plain-Polao.jpg",
     "restaurantName": "Fakhruddin Biryani",
@@ -88,7 +88,7 @@
     "createdAt": "2025-11-02"
   },
   {
-    "id": "bd1009",
+    
     "foodName": "Morog Polao (Chicken Polao)",
     "foodImageUrl": "https://i.ibb.co.com/yFQsKv6K/Morog-Polao-Chicken-Polao.jpg",
     "restaurantName": "Sultan's Dine",
@@ -99,7 +99,7 @@
     "createdAt": "2025-11-01"
   },
   {
-    "id": "bd1010",
+    
     "foodName": "Mishti Doi (Sweet Yogurt)",
     "foodImageUrl": "https://i.ibb.co.com/WNr9pLh3/Mishti-Doi-Sweet-Yogurt.jpg",
     "restaurantName": "Banoful & Co.",
@@ -110,7 +110,7 @@
     "createdAt": "2025-10-31"
   },
   {
-    "id": "bd1011",
+    
     "foodName": "Beef Kala Bhuna",
     "foodImageUrl": "https://i.ibb.co.com/V0tHDWrg/Beef-Kala-Bhuna.jpg",
     "restaurantName": "Hotel Zaman",
@@ -121,7 +121,7 @@
     "createdAt": "2025-10-30"
   },
   {
-    "id": "bd1012",
+    
     "foodName": "Singara (Samosa)",
     "foodImageUrl": "https://i.ibb.co.com/VnTJ9Hw/Singara-Samosa.jpg",
     "restaurantName": "Mohammadpur Tea Stall",
