@@ -83,8 +83,8 @@ const router = createBrowserRouter([
         </ProtectedRoute>
       },
       {
-        path:"/favorite",
-      
+        path:"/my-favorite",
+        
         element: <ProtectedRoute>
           <MyFavorite/>
         </ProtectedRoute>
@@ -93,7 +93,8 @@ const router = createBrowserRouter([
         path:"/all-favorite",
         loader: () => fetch('http://localhost:5000/all-favorite'),
         element: 
-          <Favorite/>
+          <Favorite/>,
+          hydrateFallbackElement: <Loading/>
         
       },
       

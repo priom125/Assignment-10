@@ -3,6 +3,7 @@ import Loading from '../components/Loading';
 import FavReviewCard from '../components/FavReviewCard';
 import { useLoaderData } from 'react-router';
 import { AuthContext } from '../Auth/AuthProvider';
+import ReviewCard from '../components/ReviewCard';
 
 function Favorite() {
 
@@ -57,7 +58,7 @@ function Favorite() {
             
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {favoriteReviews.map(review => (
-                        <FavReviewCard key={review._id} review={review} />
+                        <ReviewCard key={review._id} review={review} />
                     ))}
                 </div>
             </div>

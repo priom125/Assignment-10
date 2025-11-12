@@ -2,13 +2,14 @@ import React, { use } from "react";
 import { NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import { AuthContext } from "../Auth/AuthProvider";
+import Loading from "./Loading";
 
 function Navbar() {
   const { user,logOut,loading } = use(AuthContext);
 
-  // if(loading){
-  //   return <div>Loading...</div>;
-  // }
+  if(loading){
+    return <div><Loading/></div>;
+  }
 
 
 
@@ -68,7 +69,7 @@ const userDropdown = (
       </li>
       <li>
         <NavLink 
-          to="/favorite" 
+          to="/my-favorite" 
           className="hover:bg-primary/10 active:bg-primary/20 rounded-md py-2 px-3 transition-colors duration-150"
         >
           My Favorites
