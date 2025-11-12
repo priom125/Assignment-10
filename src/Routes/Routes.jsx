@@ -73,14 +73,16 @@ const router = createBrowserRouter([
         loader: ({params}) => fetch(`http://localhost:5000/all-review/${params.id}`),
         element: <ProtectedRoute>
           <DetailReview/>
-        </ProtectedRoute>
+        </ProtectedRoute>,
+        hydrateFallbackElement: <Loading/>
       },
       {
         path:"update-review/:id",
        loader: ({params}) => fetch(`http://localhost:5000/all-review/${params.id}`),
         element: <ProtectedRoute>
           <MyReview/>
-        </ProtectedRoute>
+        </ProtectedRoute>,
+        hydrateFallbackElement:<Loading/>
       },
       {
         path:"/my-favorite",

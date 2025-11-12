@@ -1,26 +1,20 @@
-import React, {  useContext, useEffect } from 'react'
+import React, {  useContext, useEffect, useState } from 'react'
 import ReviewRow from '../components/ReviewRow'
-import { useLoaderData } from 'react-router';
+
 import { AuthContext } from '../Auth/AuthProvider';
 
 function MyReview() {
 
-  const reviews = useLoaderData();
-
   const {user} = useContext(AuthContext);
+  const [reviews, setReviews] = useState([]);
 
 useEffect(() => {
   if(user?.email){
-    fetch(`http://localhost:5000/all-review?email=${user.email}` ,{
-      headers:{
-          authorization: `Bearer ${user.accessToken}`
-      }
-   } ).then(res => res.json())
-      .then(data => {
-        console.log(data);
-      })
+    fetch(`http://localhost:5000/my-review?email=${user.email}` )
+    .then(res => res.json())
+    .then(data => setReviews(data))
   }
-}, [user?.email,user?.accessToken]);
+}, [user]);
 
 
   return (
@@ -49,14 +43,9 @@ useEffect(() => {
             </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-       {reviews.map((review) => (
-                <ReviewRow
-                  // 1. Mandatory unique key prop using MongoDB's unique ID
-                  key={review._id}
-                  // 2. Pass the entire review object as a prop
-                  review={review}
-                />
-              ))}
+    {reviews.map((review) => (
+      <ReviewRow key={review._id} review={review} />
+    ))}
         </tbody>
     </table>
 </div>
