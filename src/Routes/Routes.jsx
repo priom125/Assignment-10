@@ -80,7 +80,7 @@ const router = createBrowserRouter([
         path:"update-review/:id",
        loader: ({params}) => fetch(`http://localhost:5000/all-review/${params.id}`),
         element: <ProtectedRoute>
-          <MyReview/>
+          <UpdateReview/>
         </ProtectedRoute>,
         hydrateFallbackElement:<Loading/>
       },
