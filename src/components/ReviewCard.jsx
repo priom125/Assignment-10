@@ -3,7 +3,7 @@ import { NavLink } from 'react-router';
 import { MapPin, Store , Star } from 'lucide-react';
 
 
-const ReviewCard = ({ review }) => {
+const ReviewCard = ({ _id,review }) => {
     
    
     const renderStars = (rating) => {
@@ -88,7 +88,7 @@ const ReviewCard = ({ review }) => {
         
                     <NavLink
 
-                    to={`/review/${review.id}`}  
+                    to={`/review/${review._id}`}  
 
                     className="block max-w-full text-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-indigo-600 bg-indigo-50 hover:bg-indigo-100 transition duration-150"
 

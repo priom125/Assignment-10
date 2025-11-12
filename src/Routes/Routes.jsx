@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        loader: () => fetch('Alldata.json'),
+        loader: () => fetch('http://localhost:5000/all-review'),
         hydrateFallbackElement: <Loading/>
       },
       {
@@ -62,12 +62,12 @@ const router = createBrowserRouter([
         path:"all-reviews",
          
         element: <AllReviews/>,
-          loader: () => fetch('Alldata.json'),
+          loader: () => fetch('http://localhost:5000/all-review'),
         hydrateFallbackElement: <Loading/>
       },
       {
         path:"review/:id",
-        
+        loader: ({params}) => fetch(`http://localhost:5000/all-review/${params.id}`),
         element: <ProtectedRoute>
           <DetailReview/>
         </ProtectedRoute>
