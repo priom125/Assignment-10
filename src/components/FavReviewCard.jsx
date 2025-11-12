@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router'; 
-import { MapPin, Store , Star } from 'lucide-react';
+import { MapPin, Store , Star, Heart } from 'lucide-react';
+import { AuthContext } from '../Auth/AuthProvider';
 
 
-const ReviewCard = ({ review }) => {
+const FavReviewCard = ({ review }) => {
+
+    const {user} = useContext(AuthContext);
     
    
     const renderStars = (rating) => {
@@ -24,12 +27,47 @@ const ReviewCard = ({ review }) => {
         return stars;
     };
 
-  
+  const handleFavoriteSubmit = async (event) => {
+    event?.preventDefault?.();
+
+    const favoriteData = {
+      _id: review?._id,
+      foodName: review?.foodName,
+      foodImageUrl: review?.foodImageUrl,
+      restaurantName: review?.restaurantName,
+      location: review?.location,
+      starRating: review?.starRating,
+      reviewText: review?.reviewText,
+      reviewerName: review?.reviewerName,
+      email: user?.email || review?.email || 'unregistered',
+      createdAt: review?.createdAt,
+    };
+
+    try {
+      const res = await fetch('http://localhost:5000/all-favorite', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(favoriteData),
+      });
+
+      if (!res.ok) {
+        const errText = await res.text();
+        console.error('Failed to save favorite:', res.status, errText);
+        return;
+      }
+
+      const data = await res.json();
+      console.log('Favorite saved:', data);
+    } catch (err) {
+      console.error('Error posting favorite:', err);
+    }
+  }
    
 
     return (
 
-        <div className="bg-white shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+     <form /* keep form if you need it for layout */>
+           <div className="bg-white shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
      
             <div 
                 className="
@@ -86,21 +124,19 @@ const ReviewCard = ({ review }) => {
                     </div>
                     
         
-                    <NavLink
+                    <button
+                      type="button"
+                      onClick={handleFavoriteSubmit}
+                    >
 
-                    to={`/review/${review._id}`}  
+                       <Heart size={20} className="text-red-500 cursor-pointer" />
 
-                    className="block max-w-full text-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-indigo-600 bg-indigo-50 hover:bg-indigo-100 transition duration-150"
-
-                >
-
-                    View Details
-
-                </NavLink>
+                    </button>
                 </div>
             </div>
         </div>
+     </form>
     );
 };
 
-export default ReviewCard;
+export default FavReviewCard;

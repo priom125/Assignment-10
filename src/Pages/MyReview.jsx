@@ -1,6 +1,28 @@
-import React from 'react'
+import React, {  useContext, useEffect } from 'react'
+import ReviewRow from '../components/ReviewRow'
+import { useLoaderData } from 'react-router';
+import { AuthContext } from '../Auth/AuthProvider';
 
 function MyReview() {
+
+  const reviews = useLoaderData();
+
+  const {user} = useContext(AuthContext);
+
+useEffect(() => {
+  if(user?.email){
+    fetch(`http://localhost:5000/all-review?email=${user.email}` ,{
+      headers:{
+          authorization: `Bearer ${user.accessToken}`
+      }
+   } ).then(res => res.json())
+      .then(data => {
+        console.log(data);
+      })
+  }
+}, [user?.email,user?.accessToken]);
+
+
   return (
 <section>
   <h1 className='text-5xl font-bold text-gray-900 mb-2 text-center mt-20'>My Reviews</h1>
@@ -27,32 +49,14 @@ function MyReview() {
             </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-            {/* --- Example Row 1 --- */}
-            <tr>
-                <td className="px-6 py-4">
-                    {/* Placeholder for the image */}
-                    <div className="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center">
-                        
-                    </div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    Spicy Chicken Biryani
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    Grand Mughal House
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    Nov 9, 2025
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                    <button className="text-indigo-600 hover:text-indigo-900 mr-3">
-                        Edit
-                    </button>
-                    <button className="text-red-600 hover:text-red-900">
-                        Delete
-                    </button>
-                </td>
-            </tr>
+       {reviews.map((review) => (
+                <ReviewRow
+                  // 1. Mandatory unique key prop using MongoDB's unique ID
+                  key={review._id}
+                  // 2. Pass the entire review object as a prop
+                  review={review}
+                />
+              ))}
         </tbody>
     </table>
 </div>

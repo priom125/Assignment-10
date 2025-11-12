@@ -26,7 +26,7 @@ function AddReview() {
     const starRating = form.starRating.value;
     const reviewText = form.reviewText.value;
     const email = user?.email || "unregistered";
-    const displayName = user?.displayName || "unregistered";
+    const reviewerName = user?.displayName || "unregistered";
     const review = {
       foodName,
       foodImageUrl,
@@ -36,7 +36,7 @@ function AddReview() {
       reviewText,
       createdAt: formattedDateTime,
       email,
-      displayName,
+      reviewerName,
     };
     fetch("http://localhost:5000/add-review", {
       method: "POST",

@@ -55,7 +55,7 @@ const userDropdown = (
           to="/add-review" 
           className="hover:bg-primary/10 active:bg-primary/20 rounded-md py-2 px-3 transition-colors duration-150"
         >
-          ➕ Add Review
+           Add Review
         </NavLink>
       </li>
       <li>
@@ -63,7 +63,15 @@ const userDropdown = (
           to="/my-reviews" 
           className="hover:bg-primary/10 active:bg-primary/20 rounded-md py-2 px-3 transition-colors duration-150"
         >
-          ⭐ My Reviews
+           My Reviews
+        </NavLink>
+      </li>
+      <li>
+        <NavLink 
+          to="/favorite" 
+          className="hover:bg-primary/10 active:bg-primary/20 rounded-md py-2 px-3 transition-colors duration-150"
+        >
+          My Favorites
         </NavLink>
       </li>
       
@@ -115,6 +123,9 @@ const userDropdown = (
             <li className="text-white font-semibold">
               <NavLink to="/all-reviews">All Reviews</NavLink>
             </li>
+            <li className="text-white font-semibold">
+              <NavLink to="/all-favorite">All Favorite</NavLink>
+            </li>
           </ul>
         </div>
         <NavLink to="/" className="font-bold text-white text-2xl">
@@ -129,6 +140,9 @@ const userDropdown = (
           <li className="text-white font-semibold">
             <NavLink to="/all-reviews">All Reviews</NavLink>
           </li>
+             <li className="text-white font-semibold">
+              <NavLink to="/all-favorite">All Favorite</NavLink>
+            </li>
         </ul>
       </div>
       <div className="navbar-end">

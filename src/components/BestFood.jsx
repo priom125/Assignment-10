@@ -3,7 +3,7 @@ import biriyani from '../assets/biriyani.png'
 import chicken from '../assets/chicken.png'
 function BestFood() {
   return (
-    <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center gap-10'>
+    <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center gap-10 mb-20'>
         {/* card 1 */}
         <div className='flex justify-between  bg-[#C8F5E1] w-1/2 rounded-2xl mt-20'>
             <div className='py-20 px-10 w-2/3'>
