@@ -21,38 +21,49 @@ const handleDeleteReview = (id) => {
 };
 
   return (
-<section>
-  <h1 className='text-5xl font-bold text-gray-900 mb-2 text-center mt-20'>My Reviews</h1>
-     <div className="overflow-x-auto p-4 bg-white rounded-lg shadow-md mt-10">
-   
+<section className="px-4 sm:px-6 lg:px-8 py-10">
+  {/* Section Heading */}
+  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
+    My Reviews
+  </h1>
+
+  {/* Table wrapper with horizontal scroll */}
+  <div className="overflow-x-auto  rounded-lg shadow-md">
     <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-50">
-            <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Food Image
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Food Name
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Restaurant Name
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Posted Date
-                </th>
-                <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Actions
-                </th>
-            </tr>
-        </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
-    {reviews.map((review) => (
-      <ReviewRow key={review._id} review={review} onDelete={handleDeleteReview} />
-    ))}
-        </tbody>
+      <thead className="bg-gray-50">
+        <tr>
+          <th className="px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">
+            Food Image
+          </th>
+          <th className="px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">
+            Food Name
+          </th>
+          <th className="px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">
+            Restaurant Name
+          </th>
+          <th className="px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">
+            Posted Date
+          </th>
+          <th className="px-4 py-3 text-right text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">
+            Actions
+          </th>
+        </tr>
+      </thead>
+
+      <tbody className="bg-white divide-y divide-gray-200">
+        {reviews.map((review) => (
+          <ReviewRow
+            key={review._id}
+            review={review}
+            onDelete={handleDeleteReview}
+          />
+        ))}
+      </tbody>
     </table>
-</div>
+  </div>
 </section>
+
+
   )
 }
 

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Auth/AuthProvider";
+import { toast } from "react-toastify";
 
 function AddReview() {
   const { user } = useContext(AuthContext);
@@ -48,6 +49,9 @@ function AddReview() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        form.reset();
+        toast.success("Review added successfully!");
+
       });
     // .catch(err => console.error(err));
   };

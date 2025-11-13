@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router';
 import Swal from 'sweetalert2';
 
@@ -27,7 +27,6 @@ function ReviewRow({ review, onDelete }) {
                 "Your review has been deleted.",
                 "success"
               );
-              // Call parent callback to remove from list
               if (onDelete) onDelete(review._id);
             }
           })
@@ -37,35 +36,59 @@ function ReviewRow({ review, onDelete }) {
   };
 
   console.log(review);
+
+  const date = review.createdAt.split(" T")[0];
   
   return (
-    <tr>
-      <td className="px-6 py-4">
-        <div className="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
-          <img src={review.foodImageUrl} className="w-full h-full object-cover" alt={review.foodName} />
+    <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors duration-200">
+
+      <td className="px-2 xs:px-3 sm:px-4 md:px-6 py-2 xs:py-3 sm:py-4">
+        <div className="w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
+          <img
+            src={review.foodImageUrl}
+            className="w-full h-full object-cover"
+            alt={review.foodName}
+            loading="lazy"
+          />
         </div>
       </td>
-      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-        {review.foodName}
+
+
+      <td className="px-2 xs:px-3 sm:px-4 md:px-6 py-2 xs:py-3 sm:py-4">
+        <p className="text-xs xs:text-sm sm:text-base md:text-lg font-medium text-gray-900 line-clamp-2 max-w-[100px] xs:max-w-[120px] sm:max-w-[150px] md:max-w-none">
+          {review.foodName}
+        </p>
       </td>
-      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-        {review.restaurantName}
+
+
+      <td className="xs:table-cell px-2 xs:px-3 sm:px-4 md:px-6 py-2 xs:py-3 sm:py-4">
+        <p className="text-xs xs:text-sm sm:text-base text-gray-600 line-clamp-1 max-w-[80px] xs:max-w-[100px] sm:max-w-[150px] md:max-w-none">
+          {review.restaurantName}
+        </p>
       </td>
-      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-        {review.createdAt}
+
+
+      <td className="sm:table-cell px-2 xs:px-3 sm:px-4 md:px-6 py-2 xs:py-3 sm:py-4">
+        <p className="text-xs sm:text-sm md:text-base text-gray-500 whitespace-nowrap">
+        {date}
+        </p>
       </td>
-      <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-        <NavLink to={`/update-review/${review._id}`}>
-          <button className="text-indigo-600 hover:text-indigo-900 mr-3 cursor-pointer">
-            Edit
+
+   
+      <td className="px-2 xs:px-3 sm:px-4 md:px-6 py-2 xs:py-3 sm:py-4 text-right">
+        <div className="flex flex-col xs:flex-row gap-1.5 xs:gap-2 sm:gap-3 justify-end">
+          <NavLink to={`/update-review/${review._id}`}>
+            <button className="w-full xs:w-auto px-2 xs:px-3 sm:px-4 py-1 xs:py-1.5 sm:py-2 text-xs xs:text-sm sm:text-base font-medium text-indigo-600 hover:text-indigo-900 hover:bg-indigo-50 rounded transition-all duration-200 whitespace-nowrap">
+              Edit
+            </button>
+          </NavLink>
+          <button
+            onClick={handleDelete}
+            className="w-full xs:w-auto px-2 xs:px-3 sm:px-4 py-1 xs:py-1.5 sm:py-2 text-xs xs:text-sm sm:text-base font-medium text-red-600 hover:text-red-900 hover:bg-red-50 rounded transition-all duration-200 whitespace-nowrap"
+          >
+            Delete
           </button>
-        </NavLink>
-        <button
-          onClick={handleDelete}
-          className="text-red-600 hover:text-red-900 cursor-pointer"
-        >
-          Delete
-        </button>
+        </div>
       </td>
     </tr>
   );
