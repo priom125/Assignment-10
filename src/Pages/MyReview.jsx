@@ -22,12 +22,12 @@ const handleDeleteReview = (id) => {
 
   return (
 <section className="px-4 sm:px-6 lg:px-8 py-10">
-  {/* Section Heading */}
+
   <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
     My Reviews
   </h1>
 
-  {/* Table wrapper with horizontal scroll */}
+
   <div className="overflow-x-auto  rounded-lg shadow-md">
     <table className="min-w-full divide-y divide-gray-200">
       <thead className="bg-gray-50">

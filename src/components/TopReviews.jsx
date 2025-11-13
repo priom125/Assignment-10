@@ -36,7 +36,7 @@ function TopReviews({ Alldata }) {
   return (
     <section className="py-10 sm:py-16 lg:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+
         <div className="text-center mb-10 sm:mb-14">
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 sm:mb-4 leading-tight">
             Top-Rated Food Reviews
@@ -46,7 +46,7 @@ function TopReviews({ Alldata }) {
           </p>
         </div>
 
-        {/* Review Grid */}
+
         <div
           className="
         grid 
@@ -64,7 +64,7 @@ function TopReviews({ Alldata }) {
           ))}
         </div>
 
-        {/* CTA Button */}
+    
         <div className="mt-10 sm:mt-14 text-center">
           <NavLink
             to="/all-reviews"

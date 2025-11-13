@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Bottom */}
+    
         <div className="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
           <p>© 2025 LocalEats All rights reserved.</p>
         </div>

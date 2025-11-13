@@ -43,7 +43,7 @@ const DetailReview = () => {
             <span className="ml-2 text-gray-700 font-medium">{review.starRating} / 5</span>
           </div>
 
-          {/* Review Text */}
+    
           <div className="mt-4">
             <h3 className="text-xl font-semibold text-gray-800 mb-2">
               Review
@@ -53,7 +53,7 @@ const DetailReview = () => {
             </p>
           </div>
 
-          {/* Back Button */}
+   
           <div className="flex justify-center mt-8">
             <button className="bg-indigo-600 text-white px-6 py-2 rounded-md shadow hover:bg-indigo-700 transition duration-200">
               Back to Home

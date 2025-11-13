@@ -131,13 +131,13 @@ function Navbar() {
 
       <div className="navbar-end">
         {loading ? (
-          // Show loading spinner while checking auth
+  
           <div className="w-10 h-10 border-2 border-gray-300 border-t-white rounded-full animate-spin"></div>
         ) : user ? (
-          // Show user dropdown if logged in
+    
           userDropdown
         ) : (
-          // Show login button if not logged in
+       
           <NavLink to="/login">
             <button className="btn">Login</button>
           </NavLink>

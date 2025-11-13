@@ -21,7 +21,7 @@ function Favorite() {
   return (
 <section className="py-12">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    {/* Section Header */}
+   
     <div className="text-center mb-10 sm:mb-12">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2">
         All Favorite Food Reviews
@@ -31,7 +31,7 @@ function Favorite() {
       </p>
     </div>
 
-    {/* Reviews Grid */}
+
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-full">
       {AllFavoriteData.map(review => (
         <ReviewCard key={review._id} review={review} />

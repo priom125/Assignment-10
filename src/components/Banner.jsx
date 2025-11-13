@@ -8,7 +8,7 @@ function Banner() {
   return (
 <div className="w-full">
   <div className="carousel w-full max-w-[100vw] mx-auto rounded-xl overflow-hidden">
-    {/* Slide 1 */}
+    
     <div id="slide1" className="carousel-item relative w-full">
       <img
         src={banner1}
@@ -21,7 +21,7 @@ function Banner() {
       </div>
     </div>
 
-    {/* Slide 2 */}
+
     <div id="slide2" className="carousel-item relative w-full">
       <img
         src={banner2}
@@ -34,7 +34,7 @@ function Banner() {
       </div>
     </div>
 
-    {/* Slide 3 */}
+  
     <div id="slide3" className="carousel-item relative w-full">
       <img
         src={banner3}
@@ -47,7 +47,7 @@ function Banner() {
       </div>
     </div>
 
-    {/* Slide 4 */}
+ 
     <div id="slide4" className="carousel-item relative w-full">
       <img
         src={banner4}

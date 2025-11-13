@@ -63,7 +63,7 @@ function UpdateReview() {
           onSubmit={handleUpdateReview}
           className="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-lg my-10"
         >
-          {/* 1. Food Name */}
+      
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">
               Food Name
@@ -78,7 +78,7 @@ function UpdateReview() {
             />
           </div>
 
-          {/* 2. Food Image */}
+ 
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">
               Food Image URL
@@ -93,7 +93,7 @@ function UpdateReview() {
             />
           </div>
 
-          {/* 3. Restaurant Name */}
+
           <div className="mb-4">
             <label
               htmlFor="restaurantName"
@@ -111,7 +111,7 @@ function UpdateReview() {
             />
           </div>
 
-          {/* 4. Location */}
+ 
           <div className="mb-4">
             <label
               htmlFor="location"
@@ -128,7 +128,7 @@ function UpdateReview() {
             />
           </div>
 
-          {/* 5. Star Rating */}
+     
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Star Rating
@@ -155,7 +155,7 @@ function UpdateReview() {
             </div>
           </div>
 
-          {/* 6. Review Text */}
+       
           <div className="mb-6">
             <label
               htmlFor="reviewText"

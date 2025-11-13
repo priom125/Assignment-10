@@ -64,7 +64,7 @@ function AddReview() {
         Submit Your Food Review
       </h2>
 
-      {/* 1. Food Name */}
+ 
       <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700">
           Food Name
@@ -78,7 +78,7 @@ function AddReview() {
         />
       </div>
 
-      {/* 2. Food Image */}
+  
       <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700">
           Food Image URL
@@ -92,7 +92,7 @@ function AddReview() {
         />
       </div>
 
-      {/* 3. Restaurant Name */}
+
       <div className="mb-4">
         <label
           htmlFor="restaurantName"
@@ -109,7 +109,7 @@ function AddReview() {
         />
       </div>
 
-      {/* 4. Location */}
+   
       <div className="mb-4">
         <label
           htmlFor="location"
@@ -125,7 +125,7 @@ function AddReview() {
         />
       </div>
 
-      {/* 5. Star Rating */}
+
       <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Star Rating
@@ -151,7 +151,7 @@ function AddReview() {
         </div>
       </div>
 
-      {/* 6. Review Text */}
+
       <div className="mb-6">
         <label
           htmlFor="reviewText"

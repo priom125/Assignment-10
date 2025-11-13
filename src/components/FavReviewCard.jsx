@@ -68,7 +68,7 @@ const FavReviewCard = ({ review }) => {
 
     return (
 
-     <form /* keep form if you need it for layout */>
+     <form >
            <div className="bg-white shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
      
             <div 
