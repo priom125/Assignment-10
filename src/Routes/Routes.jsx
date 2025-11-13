@@ -95,6 +95,7 @@ const router = createBrowserRouter([
         path:"/all-favorite",
         loader: () => fetch('http://localhost:5000/all-favorite'),
         element: 
+        
           <Favorite/>,
           hydrateFallbackElement: <Loading/>
         

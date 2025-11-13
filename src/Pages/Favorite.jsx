@@ -36,9 +36,7 @@ function Favorite() {
         return <div className="text-center py-10"><Loading/></div>;
     }
 
-    if (!user) {
-        return <div className="text-center py-10 text-gray-500">Please log in to see your favorite reviews.</div>;
-    }
+    
 
     if (favoriteReviews.length === 0) {
         return <div className="text-center py-10 text-gray-500">No favorite reviews available.</div>;

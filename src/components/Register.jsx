@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'; 
-import { NavLink, useNavigate } from 'react-router'; 
+import { NavLink, useLocation, useNavigate } from 'react-router'; 
 import { AuthContext } from '../Auth/AuthProvider';
 import { toast } from 'react-toastify';
 
@@ -9,6 +9,9 @@ function Register() {
     const { createUser, googleLogin, setUser, updateUser } = useContext(AuthContext);
 
     const navigate = useNavigate();
+    const location = useLocation();
+  
+    
 
 
     const validatePassword = (password) => {
@@ -53,7 +56,7 @@ function Register() {
                 const updatedUser = { ...user, displayName: name, photoURL: imageUrl };
                 setUser(updatedUser);
               
-                navigate('/');
+                 navigate(`${location.state ? location.state : '/'}`);
             })
             .catch((error) => {
                 console.error("Error updating profile:", error);
@@ -78,7 +81,7 @@ function Register() {
                 setUser(user); 
                 
                
-                   navigate('/');
+                   navigate(`${location.state ? location.state : '/'}`);
             })
             .catch((error) => {
                 console.error("Error code:", error.code);

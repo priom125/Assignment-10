@@ -1,5 +1,5 @@
 import React, { use } from "react";
-import { NavLink, useNavigate } from "react-router";
+import { NavLink, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Auth/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -7,6 +7,8 @@ function Login() {
   const { signIn, googleLogin,setUser } = use(AuthContext);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location)
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ function Login() {
          const user = result.user;
         setUser(user);
        
-           navigate('/');
+           navigate(`${location.state ? location.state : '/'}`);
 
       })
       .catch((error) => {
@@ -42,7 +44,7 @@ const ContinueWithLogin = () => {
             
             setUser(user); 
            
-            navigate('/');
+             navigate(`${location.state ? location.state : '/'}`);
         })
         .catch((error) => {
             console.error("Error code:", error.code);

@@ -9,7 +9,7 @@ import BestFood from '../components/BestFood';
 function Home() {
 
   const Alldata = useLoaderData();
-  console.log(Alldata);
+
 
   return (
     <div>
