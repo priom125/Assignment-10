@@ -6,7 +6,7 @@ import banner4 from '../assets/banner4.png'
 
 function Banner() {
   return (
-   <div className="carousel w-full">
+   <div className="carousel max-w-full">
   <div id="slide1" className="carousel-item relative w-full">
     <img
       src={banner1}

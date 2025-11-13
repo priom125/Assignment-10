@@ -2,14 +2,12 @@ import React, { use } from "react";
 import { NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import { AuthContext } from "../Auth/AuthProvider";
-import Loading from "./Loading";
+
 
 function Navbar() {
   const { user,logOut,loading } = use(AuthContext);
 
-  if(loading){
-    return <div><Loading/></div>;
-  }
+
 
 
 

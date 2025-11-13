@@ -33,7 +33,7 @@ function UpdateReview() {
       reviewerName,
     };
 
-    const url = `http://localhost:5000/all-review/${review._id}`;
+    const url = `https://assignment-10-rose.vercel.app/all-review/${review._id}`;
  
 
     fetch(url, {

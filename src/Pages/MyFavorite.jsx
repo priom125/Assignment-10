@@ -12,7 +12,7 @@ function MyFavorite() {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/my-favorite?email=${user.email}`)
+      fetch(`https://assignment-10-rose.vercel.app/my-favorite?email=${user.email}`)
         .then(res => res.json())
         .then(data => setFavoriteReviews(data))
         .catch(err => console.error(err))

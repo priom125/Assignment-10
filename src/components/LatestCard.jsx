@@ -75,7 +75,7 @@ function LatestCard({dates}) {
          
                        <div className="flex items-center space-x-0.5">
                            {renderStars(dates.starRating)}
-                           <span className="ml-1 text-sm font-bold text-gray-800 hidden sm:inline">{dates.starRating.toFixed(1)}</span>
+                           <span className="ml-1 text-sm font-bold text-gray-800 hidden sm:inline">{dates.starRating}</span>
                        </div>
                        
            

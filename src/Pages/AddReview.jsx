@@ -38,7 +38,7 @@ function AddReview() {
       email,
       reviewerName,
     };
-    fetch("http://localhost:5000/add-review", {
+    fetch("https://assignment-10-rose.vercel.app/add-review", {
       method: "POST",
       headers: {
         "content-Type": "application/json",

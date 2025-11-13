@@ -21,7 +21,7 @@ function AllReviews() {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/all-review?search=${encodeURIComponent(searchText)}`
+        `https://assignment-10-rose.vercel.app/all-review?search=${encodeURIComponent(searchText)}`
       );
       const data = await res.json();
       setTopReviews(data);

@@ -29,7 +29,7 @@ const ReviewCard = ({ review }) => {
 
     return (
 
-        <div className="bg-white shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+        <div className=" overflow-hidden transition-shadow duration-300 hover:shadow-xl">
      
             <div 
                 className="
@@ -57,7 +57,7 @@ const ReviewCard = ({ review }) => {
              
                 <div className="text-sm text-gray-500 mb-3 flex space-x-2">
                     <span className="font-semibold text-gray-700">By {review.reviewerName}</span>
-                    <span>/</span>
+                   
                     
                 </div>
 

@@ -10,7 +10,7 @@ function MyReview() {
 
 useEffect(() => {
   if(user?.email){
-    fetch(`http://localhost:5000/my-review?email=${user.email}` )
+    fetch(`https://assignment-10-rose.vercel.app/my-review?email=${user.email}` )
     .then(res => res.json())
     .then(data => setReviews(data))
   }

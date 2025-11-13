@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router'; 
 import { MapPin, Store , Star, Heart } from 'lucide-react';
 import { AuthContext } from '../Auth/AuthProvider';
+import { toast } from 'react-toastify';
 
 
 const FavReviewCard = ({ review }) => {
@@ -44,22 +45,23 @@ const FavReviewCard = ({ review }) => {
     };
 
     try {
-      const res = await fetch('http://localhost:5000/all-favorite', {
+      const res = await fetch('https://assignment-10-rose.vercel.app/all-favorite', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(favoriteData),
       });
 
       if (!res.ok) {
-        const errText = await res.text();
-        console.error('Failed to save favorite:', res.status, errText);
-        return;
+        throw new Error(`HTTP ${res.status}`);
       }
 
       const data = await res.json();
+      toast.success('Added to favorites!');
       console.log('Favorite saved:', data);
+
     } catch (err) {
       console.error('Error posting favorite:', err);
+      toast.error('Failed to add favorite');
     }
   }
    

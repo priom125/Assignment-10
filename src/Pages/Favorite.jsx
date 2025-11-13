@@ -8,37 +8,15 @@ import ReviewCard from '../components/ReviewCard';
 function Favorite() {
 
     const { user } = useContext(AuthContext);
-    const [favoriteReviews, setFavoriteReviews] = useState([]);
+
     const AllFavoriteData = useLoaderData();
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-      
-        const all = Array.isArray(AllFavoriteData) ? AllFavoriteData : [];
 
-        if (!AllFavoriteData) {
-          
-            return;
-        }
-
-        if (user?.email) {
-           
-            setFavoriteReviews(all.filter(item => item.email === user.email));
-        } else {
-           
-            setFavoriteReviews([]);
-        }
-
-        setLoading(false);
-    }, [AllFavoriteData, user]);
-
-    if (loading) {
-        return <div className="text-center py-10"><Loading/></div>;
-    }
 
     
 
-    if (favoriteReviews.length === 0) {
+    if (AllFavoriteData.length === 0) {
         return <div className="text-center py-10 text-gray-500">No favorite reviews available.</div>;
     }
   return (
@@ -46,16 +24,16 @@ function Favorite() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-10">
                     <h2 className="text-5xl font-bold text-gray-900 mb-2">
-                        Your Favorite Food Reviews
+                        All Favorite Food Reviews
                     </h2>
                     <p className="text-xl text-gray-600">
-                        Reviews saved by your account.
+                        Reviews saved by all accounts.
                     </p>
                 </div>
 
             
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {favoriteReviews.map(review => (
+                    {AllFavoriteData.map(review => (
                         <ReviewCard key={review._id} review={review} />
                     ))}
                 </div>

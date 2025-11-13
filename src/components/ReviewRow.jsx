@@ -15,7 +15,7 @@ function ReviewRow({ review, onDelete }) {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/all-review/${review._id}`, {
+        fetch(`https://assignment-10-rose.vercel.app/all-review/${review._id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())

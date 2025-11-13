@@ -22,12 +22,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts />,
-    // errorElement: <ErrorPages />,
+    errorElement:   <ErrorPage/>,
     children: [
       {
         index: true,
         element: <Home />,
-        loader: () => fetch('http://localhost:5000/all-review'),
+        loader: () => fetch('https://assignment-10-rose.vercel.app/all-review'),
         hydrateFallbackElement: <Loading/>
       },
       {
@@ -65,12 +65,12 @@ const router = createBrowserRouter([
         path:"all-reviews",
          
         element: <AllReviews/>,
-          loader: () => fetch('http://localhost:5000/all-review'),
+          loader: () => fetch('https://assignment-10-rose.vercel.app/all-review'),
         hydrateFallbackElement: <Loading/>
       },
       {
         path:"review/:id",
-        loader: ({params}) => fetch(`http://localhost:5000/all-review/${params.id}`),
+        loader: ({params}) => fetch(`https://assignment-10-rose.vercel.app/all-review/${params.id}`),
         element: <ProtectedRoute>
           <DetailReview/>
         </ProtectedRoute>,
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
       },
       {
         path:"update-review/:id",
-       loader: ({params}) => fetch(`http://localhost:5000/all-review/${params.id}`),
+       loader: ({params}) => fetch(`https://assignment-10-rose.vercel.app/all-review/${params.id}`),
         element: <ProtectedRoute>
           <UpdateReview/>
         </ProtectedRoute>,
@@ -93,9 +93,9 @@ const router = createBrowserRouter([
       },
       {
         path:"/all-favorite",
-        loader: () => fetch('http://localhost:5000/all-favorite'),
+        loader: () => fetch('https://assignment-10-rose.vercel.app/all-favorite'),
         element: 
-        
+
           <Favorite/>,
           hydrateFallbackElement: <Loading/>
         
