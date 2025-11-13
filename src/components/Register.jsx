@@ -55,9 +55,9 @@ function Register() {
                 .then(() => {
                     const updatedUser = { ...user, displayName: name, photoURL: imageUrl };
                     setUser(updatedUser);
-                    toast.success("Registration successful!");
+                   
                     
-                    // Get redirect path from location.state.from or default to '/'
+                 
                     const from = location.state?.from || '/';
                     navigate(from);
                 })
@@ -82,9 +82,9 @@ function Register() {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
-                toast.success("Login successful!");
+               
                 
-                // Get redirect path from location.state.from or default to '/'
+             
                 const from = location.state?.from || '/';
                 navigate(from);
             })
