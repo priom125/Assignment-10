@@ -27,6 +27,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><NavLink to="/" className="hover:text-white">Home</NavLink></li>
               <li><NavLink to="/all-reviews" className="hover:text-white">All Review</NavLink></li>
+              <li><NavLink to="/all-favorite" className="hover:text-white">All Favorite</NavLink></li>
             </ul>
           </div>
 

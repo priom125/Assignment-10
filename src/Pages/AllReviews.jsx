@@ -54,7 +54,7 @@ function AllReviews() {
     
         <div className="text-center mb-10">
           <h2 className="text-5xl font-bold text-gray-900 mb-2">
-            Top-Rated Food Reviews
+            All Food Reviews
           </h2>
           <p className="text-xl text-gray-600 mt-5">
             Check out what our community is raving about.

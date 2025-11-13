@@ -16,6 +16,9 @@ useEffect(() => {
   }
 }, [user]);
 
+const handleDeleteReview = (id) => {
+  setReviews(reviews.filter(r => r._id !== id));
+};
 
   return (
 <section>
@@ -44,7 +47,7 @@ useEffect(() => {
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
     {reviews.map((review) => (
-      <ReviewRow key={review._id} review={review} />
+      <ReviewRow key={review._id} review={review} onDelete={handleDeleteReview} />
     ))}
         </tbody>
     </table>

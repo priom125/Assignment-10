@@ -88,7 +88,7 @@ function Register() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center mt-40">
+        <div className="flex flex-col items-center justify-center my-20">
             <form onSubmit={handleRegister} className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 ">
                 <legend className="fieldset-legend">Register</legend>
                 

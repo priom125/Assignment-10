@@ -96,7 +96,7 @@ const FavReviewCard = ({ review }) => {
                 <div className="text-sm text-gray-500 mb-3 flex space-x-2">
                     <span className="font-semibold text-gray-700">By {review.reviewerName}</span>
                     <span>/</span>
-                    
+                     <span className="font-semibold text-gray-700">By {review.createdAt}</span>
                 </div>
 
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
