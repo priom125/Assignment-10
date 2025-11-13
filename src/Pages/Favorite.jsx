@@ -19,7 +19,7 @@ function Favorite() {
         return <div className="text-center py-10 text-gray-500">No favorite reviews available.</div>;
     }
   return (
-<section className="py-12 bg-gray-50">
+<section className="py-12">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     {/* Section Header */}
     <div className="text-center mb-10 sm:mb-12">
