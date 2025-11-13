@@ -1,87 +1,86 @@
-import React, { use } from "react";
+import React, { useContext } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Auth/AuthProvider";
 import { toast } from "react-toastify";
 
 function Login() {
-  const { signIn, googleLogin,setUser } = use(AuthContext);
+  const { signIn, googleLogin, setUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location)
 
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log({ email, password });
+    
     signIn(email, password)
       .then((result) => {
-        console.log("User Login Complete:", result.user);
-         const user = result.user;
+        const user = result.user;
         setUser(user);
-       
-           navigate(`${location.state ? location.state : '/'}`);
-
+        
+        // Get redirect path from location.state.from or default to '/'
+        const from = location.state?.from || '/';
+        navigate(from);
       })
       .catch((error) => {
-        console.error("Error code:", error.code);
-        console.error("Error message:", error.message);
-         toast.error("Login Failed. Please try again.");
+        console.error("Error:", error.message);
+        toast.error("Login Failed. Please try again.");
       });
   };
 
-const ContinueWithLogin = () => {
+  const ContinueWithLogin = () => {
     googleLogin()
-   .then((result) => {
-            const user = result.user; 
-            
-          
-            console.log("User Email:", user.email);
-            console.log("User DisplayName from Google:", user.displayName);
-            console.log("User PhotoURL from Google:", user.photoURL);
-            
-            setUser(user); 
-           
-             navigate(`${location.state ? location.state : '/'}`);
-        })
-        .catch((error) => {
-            console.error("Error code:", error.code);
-            console.error("Error message:", error.message);
-            toast.error("Login Failed. Please try again.");
-        });
-}
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        
+        // Get redirect path from location.state.from or default to '/'
+        const from = location.state?.from || '/';
+        navigate(from);
+      })
+      .catch((error) => {
+        console.error("Error:", error.message);
+        toast.error("Login Failed. Please try again.");
+      });
+  };
 
   return (
-    <div className="flex flex-col items-center justify-center mt-40">
+    <div className="flex flex-col items-center justify-center mt-20 mb-10 px-4">
       <form
         onSubmit={handleLogin}
-        className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 "
+        className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-md border p-6"
       >
-        <legend className="fieldset-legend">Login</legend>
+        <legend className="fieldset-legend text-xl font-bold">Login</legend>
 
-        <label className="label">Email</label>
+        <label className="label mt-4">Email</label>
         <input
           type="email"
-          className="input"
+          className="input input-bordered w-full"
           name="email"
-          placeholder="Email"
+          placeholder="Enter your email"
+          required
         />
 
-        <label className="label">Password</label>
+        <label className="label mt-4">Password</label>
         <input
           type="password"
-          className="input"
+          className="input input-bordered w-full"
           name="password"
-          placeholder="Password"
+          placeholder="Enter your password"
+          required
         />
 
-        <button type="submit" className="btn btn-neutral mt-4">
+        <button type="submit" className="btn btn-neutral w-full mt-6">
           Login
         </button>
 
-        <button onClick={ContinueWithLogin} type="button" className="btn bg-white text-black border-[#e5e5e5] mt-3">
+        <button
+          onClick={ContinueWithLogin}
+          type="button"
+          className="btn bg-white text-black border-[#e5e5e5] w-full mt-3 hover:bg-gray-50"
+        >
           <svg
             aria-label="Google logo"
             width="16"
@@ -91,31 +90,20 @@ const ContinueWithLogin = () => {
           >
             <g>
               <path d="m0 0H512V512H0" fill="#fff"></path>
-              <path
-                fill="#34a853"
-                d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"
-              ></path>
-              <path
-                fill="#4285f4"
-                d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"
-              ></path>
-              <path
-                fill="#fbbc02"
-                d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"
-              ></path>
-              <path
-                fill="#ea4335"
-                d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"
-              ></path>
+              <path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path>
+              <path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path>
+              <path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path>
+              <path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path>
             </g>
           </svg>
           Continue with Google
         </button>
-        <p>
-          Don't have any account?{" "}
-          <span className="text-red-500">
-            <NavLink to="/register">Register</NavLink>
-          </span>
+
+        <p className="text-center mt-4">
+          Don't have an account?{" "}
+          <NavLink to="/register" className="text-red-500 hover:underline font-semibold">
+            Register
+          </NavLink>
         </p>
       </form>
     </div>

@@ -3,7 +3,6 @@ import { NavLink, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Auth/AuthProvider';
 import { toast } from 'react-toastify';
 
-
 function Register() {
    
     const { createUser, googleLogin, setUser, updateUser } = useContext(AuthContext);
@@ -11,13 +10,16 @@ function Register() {
     const navigate = useNavigate();
     const location = useLocation();
   
-    
-
-
     const validatePassword = (password) => {
-        if (password.length < 6) { return "Password must be at least 6 characters long."; }
-        if (!/[A-Z]/.test(password)) { return "Password must include at least one uppercase letter (A-Z)."; }
-        if (!/[a-z]/.test(password)) { return "Password must include at least one lowercase letter (a-z)."; }
+        if (password.length < 6) { 
+            return "Password must be at least 6 characters long."; 
+        }
+        if (!/[A-Z]/.test(password)) { 
+            return "Password must include at least one uppercase letter (A-Z)."; 
+        }
+        if (!/[a-z]/.test(password)) { 
+            return "Password must include at least one lowercase letter (a-z)."; 
+        }
         return null; 
     };
 
@@ -43,45 +45,48 @@ function Register() {
         }
 
         createUser(email, password)
-        .then((result) => {
-            const user = result.user;
-            
-           
-            updateUser({
-                displayName: name,
-                photoURL: imageUrl,
-            })
-            .then(() => {
+            .then((result) => {
+                const user = result.user;
                 
-                const updatedUser = { ...user, displayName: name, photoURL: imageUrl };
-                setUser(updatedUser);
-              
-                 navigate(`${location.state ? location.state : '/'}`);
+                updateUser({
+                    displayName: name,
+                    photoURL: imageUrl,
+                })
+                .then(() => {
+                    const updatedUser = { ...user, displayName: name, photoURL: imageUrl };
+                    setUser(updatedUser);
+                    toast.success("Registration successful!");
+                    
+                    // Get redirect path from location.state.from or default to '/'
+                    const from = location.state?.from || '/';
+                    navigate(from);
+                })
+                .catch((error) => {
+                    console.error("Error updating profile:", error);
+                    setUser(user);
+                    toast.error("Registration successful, but profile update failed.");
+                    
+                    const from = location.state?.from || '/';
+                    navigate(from);
+                });
             })
             .catch((error) => {
-                console.error("Error updating profile:", error);
-               
-                setUser(user);
-                toast.error("Registration successful, but profile update failed.");
+                console.error("Error code:", error.code);
+                console.error("Error message:", error.message);
+                toast.error("Registration Failed. Please try again.");
             });
-        })
-        .catch((error) => {
-            console.error("Error code:", error.code);
-            console.error("Error message:", error.message);
-            toast.error("Registration Failed. Please try again.");
-        });
     };
 
     const handleGoogleLogin = () => { 
         googleLogin()
             .then((result) => {
                 const user = result.user;
+                setUser(user);
+                toast.success("Login successful!");
                 
-              
-                setUser(user); 
-                
-               
-                   navigate(`${location.state ? location.state : '/'}`);
+                // Get redirect path from location.state.from or default to '/'
+                const from = location.state?.from || '/';
+                navigate(from);
             })
             .catch((error) => {
                 console.error("Error code:", error.code);
@@ -91,25 +96,67 @@ function Register() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center my-20">
-            <form onSubmit={handleRegister} className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 ">
-                <legend className="fieldset-legend">Register</legend>
+        <div className="flex flex-col items-center justify-center my-10 px-4 min-h-screen">
+            <form 
+                onSubmit={handleRegister} 
+                className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-md border p-6"
+            >
+                <legend className="fieldset-legend text-xl font-bold">Register</legend>
                 
-                <label className="label">Name</label>
-                <input type="text" className="input" name="name" placeholder="Name" required />
-                <label className="label">Image URL</label>
-                <input type="text" className="input" name="imageUrl" placeholder="Image URL" required />
-                <label className="label">Email</label>
-                <input type="email" className="input" name="email" placeholder="Email" required />
+                <label className="label mt-4">Name</label>
+                <input 
+                    type="text" 
+                    className="input input-bordered w-full" 
+                    name="name" 
+                    placeholder="Enter your name" 
+                    required 
+                />
 
-                <label className="label">Password</label>
-                <input type="password" className="input" name="password" placeholder="Password" required />
-                <label className="label">Confirm Password</label>
-                <input type="password" className="input" name="confirmPassword" placeholder="Confirm Password" required />
+                <label className="label mt-4">Image URL</label>
+                <input 
+                    type="url" 
+                    className="input input-bordered w-full" 
+                    name="imageUrl" 
+                    placeholder="Enter image URL" 
+                    required 
+                />
 
-                <button type='submit' className="btn btn-neutral mt-4">Register</button>
+                <label className="label mt-4">Email</label>
+                <input 
+                    type="email" 
+                    className="input input-bordered w-full" 
+                    name="email" 
+                    placeholder="Enter your email" 
+                    required 
+                />
 
-                <button onClick={handleGoogleLogin} type="button" className="btn bg-white text-black border-[#e5e5e5] mt-3">
+                <label className="label mt-4">Password</label>
+                <input 
+                    type="password" 
+                    className="input input-bordered w-full" 
+                    name="password" 
+                    placeholder="Enter password (min 6 chars, 1 uppercase, 1 lowercase)" 
+                    required 
+                />
+
+                <label className="label mt-4">Confirm Password</label>
+                <input 
+                    type="password" 
+                    className="input input-bordered w-full" 
+                    name="confirmPassword" 
+                    placeholder="Confirm password" 
+                    required 
+                />
+
+                <button type="submit" className="btn btn-neutral w-full mt-6">
+                    Register
+                </button>
+
+                <button 
+                    onClick={handleGoogleLogin} 
+                    type="button" 
+                    className="btn bg-white text-black border-[#e5e5e5] w-full mt-3 hover:bg-gray-50"
+                >
                     <svg
                         aria-label="Google logo"
                         width="16"
@@ -127,7 +174,13 @@ function Register() {
                     </svg>
                     Continue with Google
                 </button>
-                <p>Have any account? <span className="text-red-500"><NavLink to="/login">Login</NavLink></span></p>
+
+                <p className="text-center mt-4">
+                    Have an account?{" "}
+                    <NavLink to="/login" className="text-red-500 hover:underline font-semibold">
+                        Login
+                    </NavLink>
+                </p>
             </form>
         </div>
     )

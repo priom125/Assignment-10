@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 import React from "react";
-import { useLoaderData } from "react-router";
+import { NavLink, useLoaderData } from "react-router";
 
 
 const DetailReview = () => {
@@ -54,10 +54,12 @@ const DetailReview = () => {
           </div>
 
    
-          <div className="flex justify-center mt-8">
-            <button className="bg-indigo-600 text-white px-6 py-2 rounded-md shadow hover:bg-indigo-700 transition duration-200">
+          <div className="flex justify-center mt-8 ">
+            <NavLink to="/">
+              <button className="bg-indigo-600 cursor-pointer text-white px-6 py-2 rounded-md shadow hover:bg-indigo-700 transition duration-200">
               Back to Home
             </button>
+            </NavLink>
           </div>
         </div>
       </div>
