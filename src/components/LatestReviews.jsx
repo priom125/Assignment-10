@@ -9,7 +9,6 @@ function LatestReviews({Alldata}) {
 
 
     useEffect(() => {
- 
         const sortedbyDates = Alldata
             .sort((a, b) => b.createdAt - a.createdAt) 
             .slice(0, 6); 
@@ -39,8 +38,8 @@ function LatestReviews({Alldata}) {
 
             
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {date.map(dates => (
-                        <LatestCard key={dates.id} dates={dates} />
+                    {date.map(review => (
+                        <LatestCard key={review.id} dates={review} />
                     ))}
                 </div>
 

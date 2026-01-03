@@ -6,12 +6,17 @@ import { RouterProvider } from "react-router";
 import router from "./Routes/Routes.jsx";
 import AuthProvider from "./Auth/AuthProvider.jsx";
 import 'react-toastify/dist/ReactToastify.css'; 
+import { ThemeProvider } from "./context/ThemeProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <ThemeProvider>
     <AuthProvider>
+      
       <RouterProvider router={router} />
+      
     </AuthProvider>
+    </ThemeProvider>
     
   </StrictMode>
 );
