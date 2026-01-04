@@ -60,6 +60,7 @@ const router = createBrowserRouter([
         element: <ProtectedRoute>
           <MyReview/>
         </ProtectedRoute>,
+        hydrateFallbackElement: <Loading/>
       },
       {
         path:"all-reviews",

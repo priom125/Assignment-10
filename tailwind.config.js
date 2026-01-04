@@ -1,13 +1,13 @@
+import daisyui from 'daisyui';
+
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class', // ⭐ ADD THIS LINE RIGHT HERE
+  darkMode: 'class', // ← MUST be here!
   theme: {
-    extend: {
-      // Your theme extensions...
-    },
+    extend: {},
   },
-  plugins: [],
+  plugins: [daisyui],
 }
